@@ -51,7 +51,7 @@ a {
     --font-weight-regular: 400;
     --font-weight-bold: 700;
     --section-header-align: center;
-    --section-tagline-transforms: uppercase;
+    --section-tagline-transform: uppercase;
 }
 
 h1, h2, h3, h4, h5, h6 {

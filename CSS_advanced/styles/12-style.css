@@ -28,11 +28,12 @@ a {
 }
 
 .section-title {
-    color: var(--section-title-color);
-    font-family: (--font-family-title);
-    font-size: (--font-size-xx-large);
-    font-weight: 9--font-weight-bold);
+    font-family: var(--font-family-title);
+    font-size: var(--font-size-xx-large);
+    font-weight: var(--font-weight-bold);
     margin: var(--section-title-margin);
+    color: var(--section-title-color);
+}
 
 .section-tagline {
     color: var(--color-primary);
