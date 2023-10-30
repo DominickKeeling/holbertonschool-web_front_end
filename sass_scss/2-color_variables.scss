@@ -1,0 +1,15 @@
+$t-color: #3D3D3D;
+$b-color: #6D6D6D;
+
+body {
+    color: $t-color;
+    background-color: $b-color;
+}
+
+p {
+    color: $t-color;
+}
+
+h2 {
+    background-color: $b-color;
+}
