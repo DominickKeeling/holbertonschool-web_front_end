@@ -1,6 +1,8 @@
 .btn-primary {
   background-color: #E0003C !important;
+  border-color: #BC1340 !important;
 }
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
@@ -11,6 +13,7 @@
   color: #E0003C !important;
   border-color:#E0003C !important;
 }
+
  .btn-outline-primary:hover {
   background-color:#BC1340;
   color:white !important;
