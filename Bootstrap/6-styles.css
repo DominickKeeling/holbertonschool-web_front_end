@@ -1,0 +1,49 @@
+.btn-primary {
+  background-color: #E0003C !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #BC1340 !important;
+}
+
+.btn-outline-primary {
+  color: #E0003C !important;
+  border-color:#E0003C !important;
+}
+ .btn-outline-primary:hover {
+  background-color:#BC1340;
+  color:white !important;
+ }
+
+
+a,
+a:hover,
+a:focus {
+  color: #E0003C !important;
+}
+
+.card {
+  border-color: #E0003C !important;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.card-header,
+.card-footer {
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  border-color:#E0003C !important;
+  background-color: #E0003C;
+  color:white;
+}
+
+.text-muted {
+  color: #8C8C8C !important;
+}
+
+.border-bottom {
+  border-color: #E0003C !important;
+}
