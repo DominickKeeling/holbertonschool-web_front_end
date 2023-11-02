@@ -8,7 +8,6 @@ This project leverages the power of Bootstrap, a widely-used, open-source framew
 - [Learning Goals](#learning-goals)
 - [Bootstrap Concepts](#bootstrap-concepts)
 - [Project Requirements](#project-requirements)
-- [Project Files](#project-files)
 
 ## Bootstrap Overview
 
