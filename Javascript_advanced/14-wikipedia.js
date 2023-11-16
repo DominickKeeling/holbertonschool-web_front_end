@@ -4,22 +4,16 @@ function createElement(data) {
   document.body.appendChild(paragraph);
 }
 
-const https = require('https');
-
 function queryWikipedia(callback) {
-  https.get('https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Stack%20Overflow&origin=*', (res) => {
-    let data = '';
-
-    res.on('data', (chunk) => {
-      data += chunk;
-    });
-
-    res.on('end', () => {
-      let response = JSON.parse(data);
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Stack%20Overflow&origin=*", true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      let response = JSON.parse(xhr.responseText);
       let extract = response.query.pages[0].extract;
       callback(extract);
-    });
-  });
-};
-
-  queryWikipedia(createElement);
+    }
+  };
+  xhr.send();
+}
+queryWikipedia(createElement);
