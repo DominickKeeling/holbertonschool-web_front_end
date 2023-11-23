@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Task 1</title>
+ <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+ <style>
+   body {
+       font-family: Times, sans-serif;
+       margin-left: 20px;
+       margin-right: 20px;
+   }
+   h2 {
+       font-size: 33px;
+   }
+   .input {
+       margin-left: 10px;
+       display: block;
+   }
+   .hide {
+       display: none;
+   }
+   .fw-normal {
+       font-weight: 300;
+   }
+ </style>
+</head>
+<body>
+ <div id="loginForm">
+   <h2>Login to the website</h2>
+     <div>
+       <input type="text" id="firstname" placeholder="Firstname">
+       <input type="text" id="email" placeholder="Email">
+       <button onclick="setCookiesAndShowWelcome()">Log me in</button>
+     </div>
+  </div>
+  <div id="welcomeMessage" style="display: none;">
+    <h1>Welcome FIRSTNAME (<a href="#" onclick="deleteCookiesAndShowForm()">logout</a>)</h1>
+  </div>
+
+  <script>
+    function setCookiesAndShowWelcome() {
+      let firstname = document.getElementById('firstname').value;
+      var email = document.getElementById('email').value;
+
+      Cookies.set('firstname', firstname, { expires: 10 });
+      Cookies.set('email', email, { expires: 10 });
+
+      showWelcomeMessageOrForm();
+    }
+
+    function showForm() {
+      document.getElementById('welcomeMessage').style.display = 'none';
+      document.getElementById('loginForm').style.display = 'block';
+    }
+
+    function hideForm() {
+      document.getElementById('loginForm').style.display = 'none';
+    }
+
+    function deleteCookiesAndShowForm() {
+      Cookies.remove('firstname');
+      Cookies.remove('email');
+      showForm();
+    }
+
+    function showWelcomeMessageOrForm() {
+      var firstname = Cookies.get('firstname');
+      var email = Cookies.get('email');
+
+      if (firstname && email) {
+        document.getElementById('welcomeMessage').style.display = 'block';
+        document.getElementById('welcomeMessage').innerHTML = "<h1>Welcome " + firstname + " (<a href='#' onclick='deleteCookiesAndShowForm()' style='font-weight: normal; font-style: italic; margin-left: 10px;'>logout</a>)</h1>";
+      } else {
+        showForm();
+      }
+    }
+
+    function showCookies() {
+      var cookies = Cookies.get();
+      var p = document.createElement('p');
+      p.innerHTML = "Cookies: " + JSON.stringify(cookies);
+
+      document.getElementById('cookieDisplay').appendChild(p);
+    }
+
+    window.onload = function() {
+      showWelcomeMessageOrForm();
+    }
+  </script>
+</body>
+</html>
